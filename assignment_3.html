@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment3</title>
+</head>
+<body>
+ <script>
+     var m1=prompt("enter mark in 1st subject");
+     m1=parseInt(m1)
+     var m2=prompt("enter mark in 2nd subject");
+     m2=parseInt(m2)
+     var m3=prompt("enter mark in 3rd subject");
+     m3=parseInt(m3)
+     console.log(m1, m2, m3)
+     
+     console.log(arr)
+     var total=m1+m2+m3;
+     var avg=total/3;
+     console.log(avg)
+     var grade;
+     if(avg>90){
+         grade="Ex"
+     }else if(avg>80 && avg<=90){
+         grade="A+"
+     }else if(avg>70 && avg<=80){
+         grade="A"
+     }else if(avg>60 && avg<=70){
+         grade="B+"
+     }else if(avg<=60){
+         grade="Fail"
+     }
+     console.log(grade)
+    
+
+ </script>
+</body>
+</html>

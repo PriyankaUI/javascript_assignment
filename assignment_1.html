@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment1</title>
+</head>
+<body>
+    <script>
+        var empName=prompt("enter employee name");
+        var empId=prompt("enter employee id")
+        
+        var empSalary=prompt("enter employee salary")
+        empSalary=parseInt(empSalary);
+        console.log(empName,empId,empSalary)
+        let da=empSalary*.35
+        let ta=empSalary*.15
+        let grossSalary=empSalary+ta+da;
+        //console.log(da,ta,"gross Salary is+grossSalary);
+        console.log(`da is ${da}
+        ta is ${ta}
+        gross salary is ${grossSalary}`)
+    </script>
+</body>
+</html>
