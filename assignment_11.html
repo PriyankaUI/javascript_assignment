@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <title>Document</title>
+</head>
+<body>
+    <div class="container py-5">
+        <h3>Find armstrong no list</h3>
+        <label for="">enter 1st number:</label>
+        <input type="text"id="n1"><br><br>
+        <label for="">enter2nd number:</label>
+        <input type="text"id="n2"><br>
+
+        <button onclick="getArmstrongNo()">submit</button>
+        <div id="number"></div>
+    </div>
+    <script>
+        function getArmstrongNo(){
+          var num1=document.getElementById("n1").value;
+          var num2=document.getElementById("n2").value;
+          var output=""
+          for(let i=num1;i<=num2;i++){
+            let numberOfDigits = i.toString().length;
+             let sum=0;
+             let temp = i;
+             while (temp > 0) {
+
+             let rem = temp % 10;
+                    sum += Math.pow(rem,numberOfDigits);
+                    //console.log(sum)
+                    temp = parseInt(temp / 10);
+                }
+ 
+             if (sum == i) {
+              //document.write(i+"<br>")
+              output+=`${i}<br>`
+            
+             }
+           }
+           document.getElementById("number").innerHTML=output
+         
+          //let html=`<div>binary : ${bnum}<\div><div>octal : ${onum}<div>hexadecimal : ${hdnum}`   
+            //document.getElementById("number").innerHTML=html
+         
+        }
+    </script>
+</body>
+</html>

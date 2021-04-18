@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container py-5">
+        <h3></h3>
+        <label for="">enter element to array:</label>
+        <input type="text"id="text">
+        <button onclick="addElement()">Add</button>
+        <div id="array"></div>
+        <div id="number"></div>
+    </div>
+    <script>
+        var arr=[];
+        function addElement(){
+            arr.push(document.getElementById('text').value); 
+            document.getElementById('text').value=''; 
+            display(); 
+        }
+        function display(){
+            var str='';
+            for (i=0;i<arr.length;i++) { 
+                str+=`arr[${i}] = ${arr[i]} <br> ` 
+            } 
+            document.getElementById('array').innerHTML=str; 
+             document.getElementById("number").innerHTML = arr.join(" ");
+        }
+    </script>
+</body>
+</html>

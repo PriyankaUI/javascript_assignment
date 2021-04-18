@@ -4,37 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" >
     <title>assignment3</title>
 </head>
 <body>
+    <div class="container py-5">
+        <div><lable>Enter mark in 1st subject</lable>
+        <input type="text" id="m1"></div><br>
+        <div><lable>enter mark in 2nd subject</lable>
+        <input type="text"id="m2"></div><br>
+        <div> <lable>enter mark in 3rd subject</lable>
+        <input type="text"id="m3"></div><br>
+        <button  class="btn btn-primary"onclick=getAvg()>Submit</button>
+        
+        <div id="student_result"></div>
  <script>
-     var m1=prompt("enter mark in 1st subject");
-     m1=parseInt(m1)
-     var m2=prompt("enter mark in 2nd subject");
-     m2=parseInt(m2)
-     var m3=prompt("enter mark in 3rd subject");
-     m3=parseInt(m3)
-     console.log(m1, m2, m3)
-     
-     console.log(arr)
-     var total=m1+m2+m3;
-     var avg=total/3;
-     console.log(avg)
-     var grade;
-     if(avg>90){
-         grade="Ex"
-     }else if(avg>80 && avg<=90){
-         grade="A+"
-     }else if(avg>70 && avg<=80){
-         grade="A"
-     }else if(avg>60 && avg<=70){
-         grade="B+"
-     }else if(avg<=60){
-         grade="Fail"
+     function getAvg(){
+        var m1=document.getElementById("m1").value;
+        m1=parseInt(m1)
+        var m2=document.getElementById("m2").value;
+        m2=parseInt(m2)
+        var m3=document.getElementById("m3").value;
+        m3=parseInt(m3)
+       var total=m1+m2+m3;
+       var avg=Number(total/3).toFixed(2);
+        console.log(avg);
+        var grade="";
+       switch(true){
+          case avg>90:
+           grade="Ex";
+           break;
+           case avg>80:
+           grade="A+";
+           break;
+           case avg>70:
+           grade="A";
+           break;
+           case avg>60:
+           grade="B";
+           break;
+           default:
+           grade="fail";
+           break;  
+
+       }
+        var html=`<hr>
+            <h3>STUDENT RESULT</h3><div>marks in subject 1 : ${m1}</div>
+            <div>marks in subject 1  : ${m2}</div>
+            <div>marks in subject 1  : ${m3}</div><div>Total mark:${total}</div><div>Avg :${avg}</div>
+            <div>Grade :${grade}</div> `
+            document.getElementById("student_result").innerHTML=html;
      }
-     console.log(grade)
+    
     
 
  </script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" ></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" ></script>
 </body>
 </html>

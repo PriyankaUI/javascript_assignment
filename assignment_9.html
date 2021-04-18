@@ -7,6 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="container py-5">
+        <label for="">enter a decimal number:</label>
+        <input type="number"id="num">
+        <button onclick="convert()">submit</button>
+        <div id="number"></div>
+    </div>
+    <script>
+        function convert(){
+          var dnum=document.getElementById("num").value;
+          bnum=parseInt(dnum).toString(2)
+          onum=parseInt(dnum).toString(8);
+          hdnum=parseInt(dnum).toString(16);
+          let html=`<div>binary : ${bnum}<\div><div>octal : ${onum}<div>hexadecimal : ${hdnum}`   
+            document.getElementById("number").innerHTML=html
+         
+        }
+    </script>
 </body>
 </html>

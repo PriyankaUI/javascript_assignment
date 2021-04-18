@@ -4,44 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Document</title>
 </head>
-<body>
+<body onload="printStar()">
+   
     <script>
-        var str=""
+        function printStar(){
+            pattern1();
+            pattern2();
+            pattern3();
+            pattern4();
+            pattern5();
+            //pattern2();
+        }
+    </script>
+
+    <script>   
+    function pattern1(){
+      
         for(var i=1;i<=4;i++){
             for(var j=1;j<=i;j++){
-                str+=i    
+                document.write(i)    
             }
-            str+= "\n"; 
+            document.write("<br>")  
         }
-        console.log(str)
-    </script>
-    <script>
-        var str=""
+    }
+    function pattern2(){
         var k=1 
         for(var i=1;i<=4;i++){
-            for(var j=1;j<=i;j++){   
-                         
-                str+=k
-                 K=k++ ;
+            for(var j=1;j<=i;j++){                    
+                document.write(k) 
+                 k++;
                    
             }
-            str+= "\n"; 
+            document.write("<br>")  
         }
-        console.log(str)
-    </script>
-    <script>
-       var str=""
+    }
+    function pattern3(){
         for(var i=1;i<=4;i++){
             for(var j=4;j>=i;j--){
-                str+="*"   
+                document.write("*") 
             }
-            str+= "\n"; 
+            document.write("<br>") 
         }
-        console.log(str)
+    }
+    function pattern4(){
+        var k;
+        for(var i=1;i<=4;i++){
+            for(var j=4;j>=i;j--){
+                document.write("&nbsp;") 
+            }
+            for(k=1;k<=i;k++){
+                document.write("*")
+            }
+            document.write("<br>") 
+        }
+    }
+    function pattern5(){
+        var k;
+        for(var i=1;i<=4;i++){
+            for(var j=1;j<=i;j++){
+                document.write("&nbsp;") 
+            }
+            for(k=4;k>=i;k--){
+                document.write("*")
+            }
+            document.write("<br>") 
+        }
+    }
         
-
     </script>
 
 </body>
